@@ -1,4 +1,4 @@
-## Intentions
+# Intentions
 
 Unlocking Hackdevs is currently too easy / not very interesting.  
 Stoves currently serve no purpose beyond frying your code.  

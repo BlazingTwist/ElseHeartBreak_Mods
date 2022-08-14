@@ -1,4 +1,4 @@
-## Intentions
+# Intentions
 
 The idea here is to turn the factory machine into a 2 stage puzzle:  
 1) Figure out how the machine works, simply solve for purity.  
@@ -15,7 +15,7 @@ The "illegal" ministry algorithm should be able to reliably create hackdevs with
 
 <br/>
 
-## The Original Puzzle
+# The Original Puzzle
 
 You are given an array of 16 random numbers in range [0, 25]  
 the following operations are available:
@@ -58,7 +58,7 @@ Observing the runtime of algorithms (Purity > 90%):
 
 <br/>
 
-## Suggested Revision
+# Suggested Revision
 
 There is an additional stat `tenacity` that decreases when refining.  
 Values refine proportional to their difference with their neighbors.  

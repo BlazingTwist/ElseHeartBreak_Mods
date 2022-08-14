@@ -42,11 +42,6 @@ for all other values, refer to this table
 
 <br/>
 
-## Your Task
-modify the array such that its purity score exceeds 14.4
-
-<br/>
-
 ## Analysis
 Observing the runtime of algorithms (Purity > 90%):
 |Algorithm|# Cases|Avg Steps|Best 1%|Worst 1%|time|

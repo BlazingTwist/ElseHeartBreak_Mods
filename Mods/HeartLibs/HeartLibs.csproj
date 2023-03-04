@@ -76,6 +76,7 @@
         <Compile Include="src\HeartLibsMod.cs" />
         <Compile Include="src\heartlibs\ActionName.cs" />
         <Compile Include="src\heartlibs\CharacterExtension.cs" />
+        <Compile Include="src\heartlibs\LoggerProvider.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

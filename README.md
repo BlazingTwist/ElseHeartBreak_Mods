@@ -38,6 +38,6 @@ Download these and place them in 'ElseHeartbreak/BepInEx/plugins/' as well.
 # Discord
 
 You need help installing mods?  
-You want to get started making your own mods?
-You can help others with modding?
+You want to get started making your own mods?  
+You can help others with modding?  
 Swing on by! [discord](https://discord.gg/ssgXhPtH)

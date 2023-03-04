@@ -1,0 +1,6 @@
+﻿.git
+.idea
+
+Dependencies/BepInEx/*
+Dependencies/BTHarmonyUtils/*
+Dependencies/ElseHeartBreak/*

@@ -35,6 +35,9 @@ APIs:
 * `GetNativeFunctions` and `GetDefinedFunctions` function that return an array of function names
 * Documentation / hackdev-help should specify the return type
 
+Story:
+* The "find pixie / the lodge" quest could be more elegantly written. Figuring out "what's up with that fishy shoe store" seems much more natural (this on its own would probably be a massive project since half of sebastians dialogues would need to be rewritten)
+
 Misc:
 * harddrives are currently useless (?)
 * add the possibility for Extractors to gain the internet API (?)

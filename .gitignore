@@ -4,3 +4,6 @@
 Dependencies/BepInEx/*
 Dependencies/BTHarmonyUtils/*
 Dependencies/ElseHeartBreak/*
+!Dependencies/BepInEx/README.md
+!Dependencies/BTHarmonyUtils/README.md
+!Dependencies/ElseHeartBreak/README.md

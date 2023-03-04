@@ -16,7 +16,7 @@ namespace FirstPersonCamera {
 		public const string pluginName = "BT FPC";
 		public const string pluginVersion = "1.0.0";
 
-		public void Awake() {
+		private void Awake() {
 			try {
 				Logger.LogInfo("Applying patches...");
 				Harmony harmony = new Harmony(pluginGuid);

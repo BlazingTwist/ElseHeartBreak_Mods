@@ -7,7 +7,7 @@ using BTHarmonyUtils.InstructionSearch;
 using BTHarmonyUtils.TranspilerUtils;
 using HarmonyLib;
 
-namespace FirstPersonCamera.patchers.asm {
+namespace FirstPersonCamera.patchers {
 
 	[HarmonyPatch(declaringType: typeof(DialogueSubstate))]
 	public class DialogueSubstate_Patch {

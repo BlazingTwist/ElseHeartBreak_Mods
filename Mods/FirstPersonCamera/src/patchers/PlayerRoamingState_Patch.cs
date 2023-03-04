@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
-using BepInEx.Logging;
 using BTHarmonyUtils.InstructionSearch;
 using BTHarmonyUtils.MidFixPatch;
 using FirstPersonCamera.impl;
@@ -10,7 +9,7 @@ using HarmonyLib;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace FirstPersonCamera.patchers.asm {
+namespace FirstPersonCamera.patchers {
 
 	[HarmonyPatch(declaringType: typeof(PlayerRoamingState))]
 	public class PlayerRoamingState_Patch {

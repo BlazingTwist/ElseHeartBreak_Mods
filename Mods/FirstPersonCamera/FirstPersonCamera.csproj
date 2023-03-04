@@ -89,15 +89,15 @@
         <Compile Include="src\FPCLogger.cs" />
         <Compile Include="src\impl\CameraControls.cs" />
         <Compile Include="src\impl\CharacterMovement.cs" />
-        <Compile Include="src\patchers\asm\CharacterShell_Patch.cs" />
-        <Compile Include="src\patchers\asm\DialogueSubstate_Patch.cs" />
-        <Compile Include="src\patchers\asm\GreatCamera_Patch.cs" />
-        <Compile Include="src\patchers\asm\HideGroup_Patch.cs" />
-        <Compile Include="src\patchers\asm\OrbitNewCameraState_Patch.cs" />
-        <Compile Include="src\patchers\asm\PlayerRoamingState_Patch.cs" />
-        <Compile Include="src\patchers\asm\RunGameWorld_Patch.cs" />
-        <Compile Include="src\patchers\asm\SetCameraDIrectionOnStart_Patch.cs" />
-        <Compile Include="src\patchers\asm\Shell_Patch.cs" />
+        <Compile Include="src\patchers\CharacterShell_Patch.cs" />
+        <Compile Include="src\patchers\DialogueSubstate_Patch.cs" />
+        <Compile Include="src\patchers\GreatCamera_Patch.cs" />
+        <Compile Include="src\patchers\HideGroup_Patch.cs" />
+        <Compile Include="src\patchers\OrbitNewCameraState_Patch.cs" />
+        <Compile Include="src\patchers\PlayerRoamingState_Patch.cs" />
+        <Compile Include="src\patchers\RunGameWorld_Patch.cs" />
+        <Compile Include="src\patchers\SetCameraDIrectionOnStart_Patch.cs" />
+        <Compile Include="src\patchers\Shell_Patch.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

@@ -5,7 +5,7 @@ using BTHarmonyUtils.MidFixPatch;
 using HarmonyLib;
 using UnityEngine;
 
-namespace FirstPersonCamera.patchers.asm {
+namespace FirstPersonCamera.patchers {
 
 	[HarmonyPatch(declaringType: typeof(RunGameWorld))]
 	public class RunGameWorld_Patch {

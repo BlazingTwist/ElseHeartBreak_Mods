@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Reflection.Emit;
 using BepInEx.Logging;
 using BTHarmonyUtils.InstructionSearch;
-using BTHarmonyUtils.MidFixPatch;
 using BTHarmonyUtils.TranspilerUtils;
 using FirstPersonCamera.impl;
 using HarmonyLib;
@@ -13,7 +12,7 @@ using JetBrains.Annotations;
 using TingTing;
 using UnityEngine;
 
-namespace FirstPersonCamera.patchers.asm {
+namespace FirstPersonCamera.patchers {
 
 	[HarmonyPatch(declaringType: typeof(CharacterShell))]
 	public class CharacterShell_Patch {

@@ -8,7 +8,7 @@ using FirstPersonCamera.impl;
 using HarmonyLib;
 using static BTHarmonyUtils.InstructionSearch.InstructionMask;
 
-namespace FirstPersonCamera.patchers.asm {
+namespace FirstPersonCamera.patchers {
 
 	[HarmonyPatch(declaringType: typeof(OrbitNewCameraState))]
 	public class OrbitNewCameraState_Patch {

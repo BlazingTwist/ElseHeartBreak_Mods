@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace FirstPersonCamera.patchers.asm {
+namespace FirstPersonCamera.patchers {
 
 	[HarmonyPatch(declaringType: typeof(HideGroup))]
 	public class HideGroup_Patch {

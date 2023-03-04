@@ -9,7 +9,7 @@ using FirstPersonCamera.impl;
 using HarmonyLib;
 using UnityEngine;
 
-namespace FirstPersonCamera.patchers.asm {
+namespace FirstPersonCamera.patchers {
 
 	[HarmonyPatch(declaringType: typeof(GreatCamera))]
 	public class GreatCamera_Patch {

@@ -1,5 +1,9 @@
 ﻿.git
-.idea
+
+**/riderModule.iml
+**/_ReSharper.Caches/
+**/.idea/workspace.xml
+**/.idea/tasks.xml
 
 Dependencies/BepInEx/*
 Dependencies/BTHarmonyUtils/*
@@ -7,3 +11,7 @@ Dependencies/ElseHeartBreak/*
 !Dependencies/BepInEx/README.md
 !Dependencies/BTHarmonyUtils/README.md
 !Dependencies/ElseHeartBreak/README.md
+
+Mods/*/bin/
+Mods/*/obj/
+Mods/*/packages/

@@ -32,3 +32,12 @@ Then place them in 'ElseHeartbreak/BepInEx/plugins/'.
 **Step 4**  
 [HeartLibs.dll](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases) and [BTHarmonyUtils.dll](https://github.com/BlazingTwist/BTHarmonyUtils/releases) are required.  
 Download these and place them in 'ElseHeartbreak/BepInEx/plugins/' as well.
+
+<br/>
+
+# Discord
+
+You need help installing mods?  
+You want to get started making your own mods?
+You can help others with modding?
+Swing on by! [discord](https://discord.gg/ssgXhPtH)

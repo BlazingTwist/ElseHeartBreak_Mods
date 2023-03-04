@@ -2,7 +2,6 @@ active todo
 	disable mouse controls
 	interact via look at + key
 	key to unlock mouse for gui interaction
-	walk-transitions should trigger by walking through them as well as clicking on them
 	when walking / running, lerp camera offset forwards to match head animation (camera position lags one frame behind)
 
 
@@ -30,3 +29,5 @@ done
 	stopping movement snaps the camera weirdly
 	in first person, fix character rotation to camera
 	Sitting in first person follows the player head
+	Portals trigger by walking into them
+	Doors Trigger by walking into (against) them

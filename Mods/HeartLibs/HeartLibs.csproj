@@ -44,6 +44,9 @@
         <Reference Include="BepInEx.Preloader, Version=5.4.21.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\Dependencies\BepInEx\BepInEx.Preloader.dll</HintPath>
         </Reference>
+        <Reference Include="GameTypes, Version=1.0.5771.15982, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Dependencies\ElseHeartBreak\GameTypes.dll</HintPath>
+        </Reference>
         <Reference Include="GameWorld2, Version=1.0.5872.25097, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\Dependencies\ElseHeartBreak\GameWorld2.dll</HintPath>
         </Reference>
@@ -76,7 +79,9 @@
         <Compile Include="src\HeartLibsMod.cs" />
         <Compile Include="src\heartlibs\ActionName.cs" />
         <Compile Include="src\heartlibs\CharacterExtension.cs" />
+        <Compile Include="src\heartlibs\DictionaryExtension.cs" />
         <Compile Include="src\heartlibs\LoggerProvider.cs" />
+        <Compile Include="src\heartlibs\MathHelper.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

@@ -56,6 +56,12 @@ namespace FirstPersonCamera.patchers {
 			CharacterMovement.ControlMovement(__instance, controls, ____avatarShell, agent);
 		}
 
+		[HarmonyPatch(methodName: "OnRoomChanged")]
+		[HarmonyPostfix]
+		private static void OnRoomChanged_Postfix(PlayerRoamingState __instance, string pRoomName) {
+			CharacterMovement.OnRoomChanged(pRoomName, GetControls(__instance).world.roomRunner);
+		}
+
 	}
 
 }

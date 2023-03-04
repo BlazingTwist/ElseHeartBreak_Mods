@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{111752F8-4700-4A7B-B705-B3D661CADE5C}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryRefineryFix", "Mods\FactoryRefineryFix\FactoryRefineryFix.csproj", "{13420C25-E91A-4A73-A97D-56F3AB792CBE}"

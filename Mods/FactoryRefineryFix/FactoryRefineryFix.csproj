@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{13420C25-E91A-4A73-A97D-56F3AB792CBE}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>FactoryRefineryFix</RootNamespace>
+        <AssemblyName>FactoryRefineryFix</AssemblyName>
+        <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony, Version=2.9.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Dependencies\BepInEx\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx, Version=5.4.21.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Dependencies\BepInEx\BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="BTHarmonyUtils, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Dependencies\BTHarmonyUtils\BTHarmonyUtils.dll</HintPath>
+        </Reference>
+        <Reference Include="GameWorld2, Version=1.0.5872.25097, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Dependencies\ElseHeartBreak\GameWorld2.dll</HintPath>
+        </Reference>
+        <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325">
+          <HintPath>..\FirstPersonCamera\packages\JetBrains.Annotations.2022.3.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+        </Reference>
+        <Reference Include="Relay, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Dependencies\ElseHeartBreak\Relay.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="TingTing, Version=1.0.5771.15983, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Dependencies\ElseHeartBreak\TingTing.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Dependencies\ElseHeartBreak\UnityEngine.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="src\FactoryRefineryFixMod.cs" />
+        <Compile Include="src\patchers\Machine_Patch.cs" />
+        <Compile Include="src\patchers\TingRunner_Patch.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\HeartLibs\HeartLibs.csproj">
+        <Project>{5937c474-738b-4d76-8537-124bd0d3c045}</Project>
+        <Name>HeartLibs</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

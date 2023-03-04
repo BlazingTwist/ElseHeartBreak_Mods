@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryRefineryFix", "Mods\FactoryRefineryFix\FactoryRefineryFix.csproj", "{13420C25-E91A-4A73-A97D-56F3AB792CBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{5937C474-738B-4D76-8537-124BD0D3C045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5937C474-738B-4D76-8537-124BD0D3C045}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5937C474-738B-4D76-8537-124BD0D3C045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13420C25-E91A-4A73-A97D-56F3AB792CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13420C25-E91A-4A73-A97D-56F3AB792CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13420C25-E91A-4A73-A97D-56F3AB792CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13420C25-E91A-4A73-A97D-56F3AB792CBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

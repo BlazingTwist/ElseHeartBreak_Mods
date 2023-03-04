@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstPersonCamera", "Mods\FirstPersonCamera\FirstPersonCamera.csproj", "{BA912496-8A52-40C7-ACDF-E712BA855224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeartLibs", "Mods\HeartLibs\HeartLibs.csproj", "{5937C474-738B-4D76-8537-124BD0D3C045}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{111752F8-4700-4A7B-B705-B3D661CADE5C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA912496-8A52-40C7-ACDF-E712BA855224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA912496-8A52-40C7-ACDF-E712BA855224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA912496-8A52-40C7-ACDF-E712BA855224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA912496-8A52-40C7-ACDF-E712BA855224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5937C474-738B-4D76-8537-124BD0D3C045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5937C474-738B-4D76-8537-124BD0D3C045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5937C474-738B-4D76-8537-124BD0D3C045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5937C474-738B-4D76-8537-124BD0D3C045}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A85502E6-813D-431A-A4F5-EDE4B88D74C0}
+	EndGlobalSection
+EndGlobal

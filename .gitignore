@@ -4,6 +4,7 @@
 **/_ReSharper.Caches/
 **/.idea/workspace.xml
 **/.idea/tasks.xml
+**/.vs
 
 Dependencies/BepInEx/*
 Dependencies/BTHarmonyUtils/*
@@ -12,6 +13,6 @@ Dependencies/ElseHeartBreak/*
 !Dependencies/BTHarmonyUtils/README.md
 !Dependencies/ElseHeartBreak/README.md
 
-Mods/*/bin/
-Mods/*/obj/
-Mods/*/packages/
+**/bin/
+**/obj/
+**/packages/

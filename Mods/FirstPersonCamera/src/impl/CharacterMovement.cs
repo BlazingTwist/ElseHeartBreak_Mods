@@ -45,12 +45,14 @@ namespace FirstPersonCamera.impl {
 
 		public static void ControlMovement(PlayerRoamingState state, GameViewControls controls, CharacterShell shell, NavMeshAgent agent) {
 			Character character = shell.character;
-			if (!character.IsDoingAction(ActionName.None) && !character.IsDoingAction(ActionName.Walking)) {
+			if (character.busy) {
+				LoggerProvider.GetLogger().LogWarning("skip move because doing action: " + character.actionName);
 				// when doing a non-walking action, wait until finished.
 				CheckStopMoving(character, agent);
 				return;
 			}
 			if (character.conversationTarget != null) {
+				LoggerProvider.GetLogger().LogWarning("skip move because conversationTarget: " + character.conversationTarget);
 				// wait for conversation to end
 				CheckStopMoving(character, agent);
 				return;
@@ -171,7 +173,7 @@ namespace FirstPersonCamera.impl {
 				character.bed = null;
 			}
 
-			return !character.IsDoingAction(ActionName.None);
+			return character.IsDoingAction(ActionName.GettingUpFromSeat) || character.IsDoingAction(ActionName.GettingUpFromBed);
 		}
 
 	}

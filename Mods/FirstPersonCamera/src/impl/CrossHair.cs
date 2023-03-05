@@ -72,12 +72,12 @@ namespace FirstPersonCamera.impl {
 			crossHairObject.transform.parent = myGo.transform;
 
 			crossHairObject.AddComponent<CanvasRenderer>();
-			Image crossHairImage = crossHairObject.AddComponent<Image>();
 
+			Image crossHairImage = crossHairObject.AddComponent<Image>();
 			crossHairImage.type = Image.Type.Simple;
-			Texture2D texture = LoadTexture("C:\\Users\\mhFre\\Documents\\crossHair.png");
+			Texture2D texture = LoadTexture(FirstPersonCameraMod.SpritePath + "crossHair.png");
+			texture.filterMode = FilterMode.Point;
 			crossHairImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero, 100f);
-			crossHairImage.color = new Color(221f / 255f, 69f / 255f, 230f / 255f);
 
 			RectTransform crossHairTransform = crossHairObject.GetComponent<RectTransform>();
 			crossHairTransform.anchorMin = new Vector2(0.5f, 0.5f);

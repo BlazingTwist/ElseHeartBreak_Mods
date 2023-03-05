@@ -82,6 +82,7 @@
         <Compile Include="src\heartlibs\DictionaryExtension.cs" />
         <Compile Include="src\heartlibs\LoggerProvider.cs" />
         <Compile Include="src\heartlibs\MathHelper.cs" />
+        <Compile Include="src\heartlibs\TextureUtils.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

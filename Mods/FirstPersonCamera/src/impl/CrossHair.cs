@@ -75,7 +75,7 @@ namespace FirstPersonCamera.impl {
 
 			Image crossHairImage = crossHairObject.AddComponent<Image>();
 			crossHairImage.type = Image.Type.Simple;
-			Texture2D texture = LoadTexture(FirstPersonCameraMod.SpritePath + "crossHair.png");
+			Texture2D texture = TextureUtils.LoadTexture(FirstPersonCameraMod.SpritePath + "crossHair.png");
 			texture.filterMode = FilterMode.Point;
 			crossHairImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero, 100f);
 
@@ -85,15 +85,6 @@ namespace FirstPersonCamera.impl {
 			crossHairTransform.pivot = new Vector2(0.5f, 0.5f);
 			crossHairTransform.anchoredPosition = Vector2.zero;
 			crossHairTransform.sizeDelta = new Vector2(16, 16);
-		}
-
-		private static Texture2D LoadTexture(string path) {
-			if (!File.Exists(path)) {
-				return null;
-			}
-
-			Texture2D texture = new Texture2D(0, 0);
-			return texture.LoadImage(File.ReadAllBytes(path)) ? texture : null;
 		}
 
 	}

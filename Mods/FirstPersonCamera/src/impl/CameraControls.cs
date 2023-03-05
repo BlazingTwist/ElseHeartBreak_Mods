@@ -13,7 +13,10 @@ namespace FirstPersonCamera.impl {
 
 		private static CharacterShell playerShell;
 		private static Material[] defaultMaterials;
-		private static Material transparentMaterial;
+		private static Material transparentFaceMaterial;
+		private static Material transparentFaceNewShoesMaterial;
+		private static Material transparentHairMaterial;
+		private static Material transparentBagMaterial;
 		private static bool isFirstPerson;
 		private static SkinnedMeshRenderer renderer;
 		private static Transform headBone;
@@ -131,19 +134,27 @@ namespace FirstPersonCamera.impl {
 			}
 
 			defaultMaterials = renderer.materials;
-			if (transparentMaterial == null) {
-				transparentMaterial = new Material(defaultMaterials[0]);
-				transparentMaterial.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
-				transparentMaterial.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-				transparentMaterial.SetInt("_ZWrite", 0);
-				transparentMaterial.DisableKeyword("_ALPHATEST_ON");
-				transparentMaterial.DisableKeyword("_ALPHABLEND_ON");
-				transparentMaterial.EnableKeyword("_ALPHAPREMULTIPLY_ON");
-				transparentMaterial.renderQueue = 3000;
-				transparentMaterial.shader = transparentShader;
-				transparentMaterial.color = new Color(0f, 0f, 0f, 0f);
-				Object.DontDestroyOnLoad(transparentMaterial);
+			// copy from hair material because it has transparency
+			Material hairMaterial = defaultMaterials[2];
+			if (transparentFaceMaterial == null) {
+				transparentFaceMaterial = LoadMaterial(hairMaterial, "Sebastian_Face_transparent.png");
 			}
+			if (transparentFaceNewShoesMaterial == null) {
+				transparentFaceNewShoesMaterial = LoadMaterial(hairMaterial, "Sebastian_Face_newSHOE_transparent.png");
+			}
+			if (transparentHairMaterial == null) {
+				transparentHairMaterial = LoadMaterial(hairMaterial, "Sebastian_Bangs_transparent.png");
+			}
+			if (transparentBagMaterial == null) {
+				transparentBagMaterial = LoadMaterial(hairMaterial, "Sebastian_Bag_transparent.png");
+			}
+		}
+
+		private static Material LoadMaterial(Material hairMaterial, string textureName) {
+			Material mat = new Material(hairMaterial);
+			mat.mainTexture = TextureUtils.LoadTexture(FirstPersonCameraMod.TexturePath + textureName);
+			Object.DontDestroyOnLoad(mat);
+			return mat;
 		}
 
 		private static void AddRadius(OrbitNewCameraState orbit, float offset) {
@@ -171,17 +182,17 @@ namespace FirstPersonCamera.impl {
 				return materials;
 			}
 
-			materials[2] = transparentMaterial;
-			materials[5] = transparentMaterial;
-			materials[6] = transparentMaterial;
+			materials[2] = transparentHairMaterial;
+			materials[5] = character.character.HasKnowledge("NewShoes") ? transparentFaceNewShoesMaterial : transparentFaceMaterial;
+			materials[6] = transparentBagMaterial;
 			return materials;
 		}
 
 		private static void MakeHeadTransparent() {
 			Material[] materials = renderer.materials;
-			materials[2] = transparentMaterial;
-			materials[5] = transparentMaterial;
-			materials[6] = transparentMaterial;
+			materials[2] = transparentHairMaterial;
+			materials[5] = playerShell.character.HasKnowledge("NewShoes") ? transparentFaceNewShoesMaterial : transparentFaceMaterial;
+			materials[6] = transparentBagMaterial;
 			renderer.materials = materials;
 		}
 

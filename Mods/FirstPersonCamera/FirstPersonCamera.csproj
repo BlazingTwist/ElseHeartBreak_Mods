@@ -113,6 +113,10 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="resources\BepInEx\config\fpc\sprites\crossHair.png" />
+      <Content Include="resources\BepInEx\config\fpc\textures\Sebastian_Bag_transparent.png" />
+      <Content Include="resources\BepInEx\config\fpc\textures\Sebastian_Bangs_transparent.png" />
+      <Content Include="resources\BepInEx\config\fpc\textures\Sebastian_Face_newSHOE_transparent.png" />
+      <Content Include="resources\BepInEx\config\fpc\textures\Sebastian_Face_transparent.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

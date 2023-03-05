@@ -19,6 +19,7 @@ namespace FirstPersonCamera {
 		public const string pluginVersion = "1.0.0";
 
 		public static string SpritePath => Path.Combine(Paths.ConfigPath, "fpc/sprites/");
+		public static string TexturePath => Path.Combine(Paths.ConfigPath, "fpc/textures/");
 
 		private void Awake() {
 			try {

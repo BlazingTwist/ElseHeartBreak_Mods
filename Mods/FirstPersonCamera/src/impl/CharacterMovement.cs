@@ -19,6 +19,7 @@ namespace FirstPersonCamera.impl {
 		private static readonly Dictionary<string, float> specialTransitionDepthOffsets = new Dictionary<string, float> {
 				{ "DorisGardens_East_DoorToLodge", 1.75f }, // Tree-Door is unusually thick
 				{ "Plaza_PortalToBurrowsNorth3", 1.4f }, // Shoe-Store entrance
+				{ "HarbWestHouseLobby_DoorToRoom1", 0.6f }, // door on a staircase that can't be passed.
 		};
 
 		private const float defaultTransitionDepthOffset = 1.2f;

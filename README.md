@@ -2,7 +2,7 @@
 
 |Status|Mod|Description|
 |:---:|---|---|
-|✅|FactoryRefineryFix|Fixes a bug causing the machines in the factory to break after converting a resource.|
+|✅|[FactoryRefineryFix](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases/tag/frf-1.0.0)|Fixes a bug causing the machines in the factory to break after converting a resource.|
 |⚠️|HeartLibs|Utility Library for EHB Modders|
 |⚠️|FirstPersonCamera|1st/3rd Person Camera and Keyboard Controls.|
 

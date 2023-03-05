@@ -69,7 +69,7 @@ namespace FirstPersonCamera.impl {
 			scaler.scaleFactor = 0.6f;
 
 			GameObject crossHairObject = new GameObject("CrossHairObj");
-			crossHairObject.transform.parent = myGo.transform;
+			crossHairObject.transform.SetParent(myGo.transform, false);
 
 			crossHairObject.AddComponent<CanvasRenderer>();
 

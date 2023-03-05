@@ -93,10 +93,12 @@
         <Compile Include="src\impl\FirstPersonState.cs" />
         <Compile Include="src\patchers\CharacterShell_Patch.cs" />
         <Compile Include="src\patchers\DialogueSubstate_Patch.cs" />
+        <Compile Include="src\patchers\Door_Patch.cs" />
         <Compile Include="src\patchers\GreatCamera_Patch.cs" />
         <Compile Include="src\patchers\HideGroup_Patch.cs" />
         <Compile Include="src\patchers\OrbitNewCameraState_Patch.cs" />
         <Compile Include="src\patchers\PlayerRoamingState_Patch.cs" />
+        <Compile Include="src\patchers\Portal_Patch.cs" />
         <Compile Include="src\patchers\RunGameWorld_Patch.cs" />
         <Compile Include="src\patchers\SetCameraDIrectionOnStart_Patch.cs" />
         <Compile Include="src\patchers\Shell_Patch.cs" />

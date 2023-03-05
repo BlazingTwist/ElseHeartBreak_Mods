@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using BepInEx.Logging;
+using GameTypes;
+using GameWorld2;
 using HeartLibs.heartlibs;
 using JetBrains.Annotations;
 using UnityEngine;
+using Logger = BepInEx.Logging.Logger;
 
 namespace FirstPersonCamera.impl {
 
@@ -46,6 +49,14 @@ namespace FirstPersonCamera.impl {
 
 		public static bool IsFirstPerson() {
 			return isFirstPerson;
+		}
+
+		public static void SetTransitionDirection(Direction directionGoneIn, Direction directionComeOut) {
+			float goneInAngle = Quaternion.LookRotation(-MathHelper.DirectionToVector(directionGoneIn), Vector3.up).eulerAngles.y;
+			float goneOutAngle = Quaternion.LookRotation(MathHelper.DirectionToVector(directionComeOut), Vector3.up).eulerAngles.y;
+
+			OrbitNewCameraState cameraState = RunGameWorld.instance.gameViewControls.camera.orbit;
+			cameraState.currentAngle += (goneOutAngle - goneInAngle);
 		}
 
 		public static void UpdateCameraLookDirection(GreatCamera camera, Shell avatar) {
@@ -92,9 +103,24 @@ namespace FirstPersonCamera.impl {
 				camera.Input_Drag(0f, Time.deltaTime * cameraDragRate);
 			}
 
-			if (isFirstPerson && !character.character.IsSeatedOrBedded()) {
+			if (isFirstPerson && ShouldRotateCharacterWithCamera(character.character)) {
 				character.transform.forward = Vector3.Scale(camera.transform.forward, new Vector3(1f, 0f, 1f)).normalized;
 			}
+		}
+
+		private static bool ShouldRotateCharacterWithCamera(Character character) {
+			if (character.IsSeatedOrBedded()) {
+				return false;
+			}
+			// ReSharper disable once ConvertIfStatementToReturnStatement
+			if (character.IsDoingAction(ActionName.WalkingThroughDoor)
+					|| character.IsDoingAction(ActionName.WalkingThroughFence)
+					|| character.IsDoingAction(ActionName.WalkingThroughPortal)
+					|| character.IsDoingAction(ActionName.WalkingThroughDoorPhase2)
+					|| character.IsDoingAction(ActionName.WalkingThroughPortalPhase2)) {
+				return false;
+			}
+			return true;
 		}
 
 		private static void UpdatePlayerShell(CharacterShell shell) {

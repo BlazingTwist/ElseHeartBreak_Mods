@@ -67,6 +67,12 @@ namespace FirstPersonCamera.patchers {
 			__instance.orbit.currentAngle = pAngle;
 		}*/
 
+		[HarmonyPatch(methodName: nameof(GreatCamera.Shake))]
+		[HarmonyPrefix]
+		private static void Shake_Prefix(ref float pAmmount) {
+			pAmmount /= 3f;
+		}
+
 	}
 
 }

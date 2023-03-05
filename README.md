@@ -3,8 +3,8 @@
 |Status|Mod|Description|
 |:---:|---|---|
 |✅|[FactoryRefineryFix](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases/tag/frf-1.0.0)|Fixes a bug causing the machines in the factory to break after converting a resource.|
-|⚠️|[HeartLibs](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases/tag/hl-0.0.1)|Utility Library for EHB Modders|
-|⚠️|[FirstPersonCamera](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases/tag/fpc-0.0.1)|1st/3rd Person Camera and Keyboard Controls.|
+|⚠️|[HeartLibs](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases/tag/hl-0.0.2)|Utility Library for EHB Modders|
+|⚠️|[FirstPersonCamera](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases/tag/fpc-0.0.2)|1st/3rd Person Camera and Keyboard Controls.|
 
 ### Status indicators:
 
@@ -30,7 +30,7 @@ Change the line `Type = Application` to `Type = MonoBehaviour`
 Then place them in 'ElseHeartbreak/BepInEx/plugins/'.
 
 **Step 4**  
-[HeartLibs.dll](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases/tag/hl-0.0.1)
+[HeartLibs.dll](https://github.com/BlazingTwist/ElseHeartBreak_Mods/releases/tag/hl-0.0.2)
 and [BTHarmonyUtils.dll](https://github.com/BlazingTwist/BTHarmonyUtils/releases) are required.  
 Download these and place them in 'ElseHeartbreak/BepInEx/plugins/' as well.
 

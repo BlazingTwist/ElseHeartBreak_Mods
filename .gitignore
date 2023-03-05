@@ -16,3 +16,6 @@ Dependencies/ElseHeartBreak/*
 **/bin/
 **/obj/
 **/packages/
+
+ReleaseBuilder/*/*
+!ReleaseBuilder/*/*.bat

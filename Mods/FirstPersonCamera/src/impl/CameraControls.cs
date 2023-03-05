@@ -60,7 +60,7 @@ namespace FirstPersonCamera.impl {
 		}
 
 		public static void UpdateCameraLookDirection(GreatCamera camera, Shell avatar) {
-			if (camera == null || avatar == null) {
+			if (camera == null) {
 				return;
 			}
 			OrbitNewCameraState cameraState = camera.orbit;
@@ -69,7 +69,7 @@ namespace FirstPersonCamera.impl {
 			Vector3 lookRight = lookRotation * Vector3.right;
 			if (isFirstPerson && headBone != null) {
 				cameraState.position = headBone.position;
-			} else {
+			} else if (avatar != null) {
 				float radiusOffset = cameraState.radius / 10f;
 				cameraState.position = avatar.lookTargetPoint
 						+ (Vector3.up * (4f + radiusOffset))
@@ -80,11 +80,11 @@ namespace FirstPersonCamera.impl {
 			camera.UpdateStates(Time.deltaTime);
 		}
 
-		public static void ControlCamera(GreatCamera camera, CharacterShell character) {
+		public static void ControlCamera(GreatCamera camera, [CanBeNull] CharacterShell character) {
 			CrossHair.SetRoamingCursorLocked(!Input.GetKey(KeyCode.LeftAlt));
 			UpdatePlayerShell(character);
 
-			if (!Mathf.Approximately(Input.mouseScrollDelta.y, 0f)) {
+			if (character != null && !Mathf.Approximately(Input.mouseScrollDelta.y, 0f)) {
 				AddRadius(camera.orbit, -Input.mouseScrollDelta.y);
 			}
 
@@ -103,7 +103,7 @@ namespace FirstPersonCamera.impl {
 				camera.Input_Drag(0f, Time.deltaTime * cameraDragRate);
 			}
 
-			if (isFirstPerson && ShouldRotateCharacterWithCamera(character.character)) {
+			if (character != null && isFirstPerson && ShouldRotateCharacterWithCamera(character.character)) {
 				character.transform.forward = Vector3.Scale(camera.transform.forward, new Vector3(1f, 0f, 1f)).normalized;
 			}
 		}
@@ -125,7 +125,6 @@ namespace FirstPersonCamera.impl {
 
 		private static void UpdatePlayerShell(CharacterShell shell) {
 			if (shell == null) {
-				logger.LogWarning("Character was null!");
 				return;
 			}
 			if (playerShell == shell) {
@@ -193,6 +192,10 @@ namespace FirstPersonCamera.impl {
 		}
 
 		private static void CheckIsFirstPerson(float radius) {
+			if (renderer == null || defaultMaterials == null) {
+				return;
+			}
+
 			if (isFirstPerson && radius > 0f) {
 				isFirstPerson = false;
 				MakeHeadVisible();

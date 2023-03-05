@@ -102,6 +102,7 @@
         <Compile Include="src\patchers\RunGameWorld_Patch.cs" />
         <Compile Include="src\patchers\SetCameraDIrectionOnStart_Patch.cs" />
         <Compile Include="src\patchers\Shell_Patch.cs" />
+        <Compile Include="src\patchers\TramRideState_Patch.cs" />
         <Compile Include="src\patchers\WorldLoadingState_Patch.cs" />
     </ItemGroup>
     <ItemGroup>

@@ -60,6 +60,51 @@ namespace FirstPersonCamera.patchers {
 			return instructions;
 		}
 
+		[HarmonyPatch(methodName: "LateUpdate")]
+		[HarmonyTranspiler]
+		private static IEnumerable<CodeInstruction> LateUpdate_Transpiler(IEnumerable<CodeInstruction> codeInstructions) {
+			List<CodeInstruction> instructions = codeInstructions.ToList();
+
+			FieldInfo field_greatCamera = AccessTools.DeclaredField(typeof(RunGameWorld), "_greatCamera");
+			MethodInfo getter_avatarShell = AccessTools.DeclaredPropertyGetter(typeof(RunGameWorld), "avatarShell");
+			MethodInfo method_UpdateCameraLookDirection = SymbolExtensions.GetMethodInfo(() => CameraControls.UpdateCameraLookDirection(null, null));
+
+			CodeReplacementPatch patch = new CodeReplacementPatch(
+					expectedMatches: 1,
+					targetInstructions: new[] {
+							InstructionMask.MatchOpCode(OpCodes.Ldarg_0),
+							InstructionMask.MatchOpCode(OpCodes.Call),
+							InstructionMask.MatchOpCode(OpCodes.Ldnull),
+							InstructionMask.MatchOpCode(OpCodes.Call),
+							InstructionMask.MatchOpCode(OpCodes.Brfalse),
+							InstructionMask.MatchOpCode(OpCodes.Ldarg_0),
+							InstructionMask.MatchOpCode(OpCodes.Ldfld),
+							InstructionMask.MatchOpCode(OpCodes.Ldarg_0),
+							InstructionMask.MatchOpCode(OpCodes.Call),
+							InstructionMask.MatchOpCode(OpCodes.Callvirt),
+							InstructionMask.MatchOpCode(OpCodes.Callvirt),
+							InstructionMask.MatchOpCode(OpCodes.Ldarg_0),
+							InstructionMask.MatchOpCode(OpCodes.Ldfld),
+							InstructionMask.MatchOpCode(OpCodes.Ldarg_0),
+							InstructionMask.MatchOpCode(OpCodes.Call),
+							InstructionMask.MatchOpCode(OpCodes.Callvirt),
+							InstructionMask.MatchOpCode(OpCodes.Callvirt),
+							InstructionMask.MatchOpCode(OpCodes.Callvirt),
+							InstructionMask.MatchOpCode(OpCodes.Br),
+					},
+					insertInstructions: new[] {
+							new CodeInstruction(OpCodes.Ldarg_0),
+							new CodeInstruction(OpCodes.Ldfld, field_greatCamera),
+							new CodeInstruction(OpCodes.Ldarg_0),
+							new CodeInstruction(OpCodes.Call, getter_avatarShell),
+							new CodeInstruction(OpCodes.Call, method_UpdateCameraLookDirection),
+					}
+			);
+			patch.ApplySafe(instructions, LoggerProvider.GetLogger());
+
+			return instructions;
+		}
+
 	}
 
 }

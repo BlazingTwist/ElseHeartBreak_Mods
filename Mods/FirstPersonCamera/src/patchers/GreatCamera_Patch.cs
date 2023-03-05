@@ -16,9 +16,16 @@ namespace FirstPersonCamera.patchers {
 
 		private static readonly ManualLogSource logger = Logger.CreateLogSource(nameof(GreatCamera_Patch));
 
+		[HarmonyPatch(methodName: "Update")]
+		[HarmonyPrefix]
+		private static bool Update_Prefix() {
+			return false;
+		}
+
 		[HarmonyPatch(methodName: nameof(GreatCamera.UpdateStates))]
 		[HarmonyPostfix]
-		private static void UpdateStates_Postfix() {
+		private static void UpdateStates_Postfix(GreatCamera __instance) {
+			// TODO kinda jank doing this every frame
 			Camera camera = Camera.main;
 			if (camera != null) {
 				camera.fieldOfView = 90f;

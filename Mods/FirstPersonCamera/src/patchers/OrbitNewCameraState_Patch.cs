@@ -74,7 +74,6 @@ namespace FirstPersonCamera.patchers {
 		[HarmonyPatch(methodName: nameof(OrbitNewCameraState.Update))]
 		[HarmonyPrefix]
 		private static bool Update_Prefix(OrbitNewCameraState __instance) {
-			CameraControls.UpdateCameraLookDirection(__instance);
 			return false;
 		}
 

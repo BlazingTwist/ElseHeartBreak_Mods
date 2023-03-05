@@ -44,7 +44,11 @@ namespace FirstPersonCamera.impl {
 			return isFirstPerson;
 		}
 
-		public static void UpdateCameraLookDirection(OrbitNewCameraState cameraState) {
+		public static void UpdateCameraLookDirection(GreatCamera camera, Shell avatar) {
+			if (camera == null || avatar == null) {
+				return;
+			}
+			OrbitNewCameraState cameraState = camera.orbit;
 			Quaternion lookRotation = Quaternion.Euler(cameraState.tilt, cameraState.currentAngle, 0f);
 			Vector3 lookForward = lookRotation * Vector3.forward;
 			Vector3 lookRight = lookRotation * Vector3.right;
@@ -52,12 +56,13 @@ namespace FirstPersonCamera.impl {
 				cameraState.position = headBone.position;
 			} else {
 				float radiusOffset = cameraState.radius / 10f;
-				cameraState.position = cameraState.lookTarget
+				cameraState.position = avatar.lookTargetPoint
 						+ (Vector3.up * (4f + radiusOffset))
 						+ (lookForward * (-cameraState.radius))
 						+ (lookRight * (-radiusOffset));
 			}
 			cameraState.lookTarget = cameraState.position + (lookForward * 25f);
+			camera.UpdateStates(Time.deltaTime);
 		}
 
 		public static void ControlCamera(GreatCamera camera, CharacterShell character) {

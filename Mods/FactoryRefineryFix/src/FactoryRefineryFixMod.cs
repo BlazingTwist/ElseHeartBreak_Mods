@@ -21,6 +21,7 @@ namespace FactoryRefineryFix {
 				Assembly assembly = GetType().Assembly;
 				harmony.PatchAll(assembly);
 				BTHarmonyUtils.PatcherUtils.PatchAll(harmony, assembly);
+				Logger.LogInfo("Patches applied.");
 			} catch (Exception e) {
 				Logger.LogError("Patches failed to exception:\n" + e);
 			}

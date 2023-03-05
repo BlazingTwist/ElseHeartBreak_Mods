@@ -18,9 +18,10 @@ namespace FirstPersonCamera.impl {
 		// TODO verify that 'Lodge_Room1_DoorToRoom2' does not break the story
 		private static readonly Dictionary<string, float> specialTransitionDepthOffsets = new Dictionary<string, float> {
 				{ "DorisGardens_East_DoorToLodge", 1.75f }, // Tree-Door is unusually thick
+				{ "Plaza_PortalToBurrowsNorth3", 1.4f }, // Shoe-Store entrance
 		};
 
-		private const float defaultTransitionDepthOffset = 1f;
+		private const float defaultTransitionDepthOffset = 1.2f;
 
 		public static void OnRoomChanged(string newRoom, RoomRunner roomRunner) {
 			walkTransitionsInRoom.Clear();

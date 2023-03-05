@@ -15,6 +15,11 @@ namespace HeartLibs.heartlibs {
 			return character.actionName == action.Value;
 		}
 
+		public static bool IsSeatedOrBedded(this Character character) {
+			// for some reason characters can get seated without setting the 'sitting' flag...
+			return character.sitting || character.laying || character.seat != null || character.bed != null;
+		}
+
 	}
 
 }

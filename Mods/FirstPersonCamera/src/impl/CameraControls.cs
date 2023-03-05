@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using BepInEx.Logging;
+using HeartLibs.heartlibs;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -88,7 +89,7 @@ namespace FirstPersonCamera.impl {
 				camera.Input_Drag(0f, Time.deltaTime * cameraDragRate);
 			}
 
-			if (isFirstPerson && !(character.character.sitting || character.character.laying)) {
+			if (isFirstPerson && !character.character.IsSeatedOrBedded()) {
 				character.transform.forward = Vector3.Scale(camera.transform.forward, new Vector3(1f, 0f, 1f)).normalized;
 			}
 		}

@@ -14,12 +14,11 @@ namespace FirstPersonCamera.patchers {
 				return true;
 			}
 
-			// don't snap while walking
-			if (characterShell.character.IsDoingAction(ActionName.Walking)) {
-				return false;
+			if (characterShell.character.IsSeatedOrBedded()) {
+				return true;
 			}
 
-			// also don't snap for minor distances
+			// don't snap for minor distances
 			float distance = (characterShell.transform.position - MimanHelper.TilePositionToVector3(characterShell.ting.localPoint)).magnitude;
 			return !(distance < 1.5);
 		}

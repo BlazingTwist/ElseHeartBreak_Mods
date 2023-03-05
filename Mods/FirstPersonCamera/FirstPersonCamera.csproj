@@ -11,6 +11,7 @@
         <AssemblyName>FirstPersonCamera</AssemblyName>
         <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+        <LangVersion>7.3</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,12 +80,17 @@
         <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\Dependencies\ElseHeartBreak\UnityEngine.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\Dependencies\ElseHeartBreak\UnityEngine.UI.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="src\FirstPersonCameraMod.cs" />
         <Compile Include="src\impl\CameraControls.cs" />
         <Compile Include="src\impl\CharacterMovement.cs" />
+        <Compile Include="src\impl\CrossHair.cs" />
+        <Compile Include="src\impl\FirstPersonState.cs" />
         <Compile Include="src\patchers\CharacterShell_Patch.cs" />
         <Compile Include="src\patchers\DialogueSubstate_Patch.cs" />
         <Compile Include="src\patchers\GreatCamera_Patch.cs" />
@@ -94,6 +100,7 @@
         <Compile Include="src\patchers\RunGameWorld_Patch.cs" />
         <Compile Include="src\patchers\SetCameraDIrectionOnStart_Patch.cs" />
         <Compile Include="src\patchers\Shell_Patch.cs" />
+        <Compile Include="src\patchers\WorldLoadingState_Patch.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
@@ -103,6 +110,9 @@
         <Project>{5937c474-738b-4d76-8537-124bd0d3c045}</Project>
         <Name>HeartLibs</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="resources\BepInEx\config\fpc\sprites\crossHair.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

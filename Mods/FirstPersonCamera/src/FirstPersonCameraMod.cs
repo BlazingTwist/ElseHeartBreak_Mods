@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
 using BepInEx;
+using FirstPersonCamera.impl;
 using HarmonyLib;
 using HeartLibs;
 using JetBrains.Annotations;
@@ -16,6 +18,8 @@ namespace FirstPersonCamera {
 		public const string pluginName = "BT FPC";
 		public const string pluginVersion = "1.0.0";
 
+		public static string SpritePath => Path.Combine(Paths.ConfigPath, "fpc/sprites/");
+
 		private void Awake() {
 			try {
 				Logger.LogInfo("Applying patches...");
@@ -27,6 +31,8 @@ namespace FirstPersonCamera {
 			} catch (Exception e) {
 				Logger.LogError("Patches failed to exception:\n" + e);
 			}
+
+			CrossHair.AttachToScene();
 		}
 
 	}

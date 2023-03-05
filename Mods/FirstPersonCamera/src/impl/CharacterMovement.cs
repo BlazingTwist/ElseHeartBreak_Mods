@@ -94,20 +94,20 @@ namespace FirstPersonCamera.impl {
 		private static Vector3 GetMovementInput(Vector3 forward, Vector3 right) {
 			Vector3 offset = Vector3.zero;
 			isMoving = false;
-			if (Input.GetKey(KeyCode.I)) {
+			if (Input.GetKey(KeyCode.W)) {
 				isMoving = true;
 				offset += forward;
 			}
-			if (Input.GetKey(KeyCode.K)) {
+			if (Input.GetKey(KeyCode.S)) {
 				isMoving = true;
 				offset -= forward;
 			}
 
-			if (Input.GetKey(KeyCode.J)) {
+			if (Input.GetKey(KeyCode.A)) {
 				isMoving = true;
 				offset -= right;
 			}
-			if (Input.GetKey(KeyCode.L)) {
+			if (Input.GetKey(KeyCode.D)) {
 				isMoving = true;
 				offset += right;
 			}

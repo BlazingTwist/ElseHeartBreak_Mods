@@ -36,21 +36,32 @@ namespace FirstPersonCamera.impl {
 			return screenPosition + screenOffset;
 		}
 
+		public static Vector3 GetCameraPoint(CharacterShell character) {
+			return character.transform.position + (Vector3.up * 0.4f);
+		}
+
 		public static bool IsFirstPerson() {
 			return isFirstPerson;
 		}
 
 		public static void UpdateCameraLookDirection(OrbitNewCameraState cameraState) {
-			Vector3 lookDirection = Quaternion.Euler(cameraState.tilt, cameraState.currentAngle, 0f) * Vector3.forward;
+			Quaternion lookRotation = Quaternion.Euler(cameraState.tilt, cameraState.currentAngle, 0f);
+			Vector3 lookForward = lookRotation * Vector3.forward;
+			Vector3 lookRight = lookRotation * Vector3.right;
 			if (isFirstPerson && headBone != null) {
 				cameraState.position = headBone.position;
 			} else {
-				cameraState.position = cameraState.lookTarget + new Vector3(0f, 4f, 0f) + (lookDirection * (-cameraState.radius));
+				float radiusOffset = cameraState.radius / 10f;
+				cameraState.position = cameraState.lookTarget
+						+ (Vector3.up * (4f + radiusOffset))
+						+ (lookForward * (-cameraState.radius))
+						+ (lookRight * (-radiusOffset));
 			}
-			cameraState.lookTarget = cameraState.position + (lookDirection * 25f);
+			cameraState.lookTarget = cameraState.position + (lookForward * 25f);
 		}
 
 		public static void ControlCamera(GreatCamera camera, CharacterShell character) {
+			CrossHair.SetRoamingCursorLocked(!Input.GetKey(KeyCode.LeftAlt));
 			UpdatePlayerShell(character);
 
 			if (!Mathf.Approximately(Input.mouseScrollDelta.y, 0f)) {
@@ -59,16 +70,16 @@ namespace FirstPersonCamera.impl {
 
 			const float lookSensitivity = 0.03f * 7f;
 			const float cameraDragRate = 140f;
-			if (Input.GetMouseButton(1)) {
+			if (!Input.GetKey(KeyCode.LeftAlt) || Input.GetMouseButton(1)) {
 				camera.Input_Drag(Input.GetAxis("Horizontal") * lookSensitivity, Input.GetAxis("Vertical") * lookSensitivity);
-			} else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
+			} else if (Input.GetKey(KeyCode.LeftArrow)) {
 				camera.Input_Drag(Time.deltaTime * -cameraDragRate, 0f);
-			} else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+			} else if (Input.GetKey(KeyCode.RightArrow)) {
 				camera.Input_Drag(Time.deltaTime * cameraDragRate, 0f);
 			}
-			if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
+			if (Input.GetKey(KeyCode.UpArrow)) {
 				camera.Input_Drag(0f, Time.deltaTime * -cameraDragRate);
-			} else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
+			} else if (Input.GetKey(KeyCode.DownArrow)) {
 				camera.Input_Drag(0f, Time.deltaTime * cameraDragRate);
 			}
 

@@ -38,7 +38,7 @@ namespace FirstPersonCamera.patchers {
 		[HarmonyPatch(methodType: MethodType.Getter, methodName: nameof(CharacterShell.lookTargetPoint))]
 		[HarmonyPrefix]
 		private static bool GetLookTargetPoint_Prefix(CharacterShell __instance, out Vector3 __result) {
-			__result = __instance.transform.position + (Vector3.up * 0.4f);
+			__result = CameraControls.GetCameraPoint(__instance);
 			return false;
 		}
 

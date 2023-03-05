@@ -51,7 +51,9 @@ namespace FirstPersonCamera.patchers {
 
 			return instructions;
 		}
-		
+
+		// uncomment this if you want Input_SetRotation to work with FPC
+		// currently that behaviour is unwanted
 		/*[HarmonyPatch(methodName: nameof(GreatCamera.Input_SetRotation))]
 		[HarmonyPostfix]
 		private static void Input_SetRotation_Postfix(GreatCamera __instance, float pAngle) {
